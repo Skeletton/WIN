@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0e1220">
+  <title>WIN Challenges · Gemeinsam abhaken</title>
+  <style>
+    :root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1020;color:#eaf0fa;font-synthesis:none}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(70rem 45rem at 0% -10%,#1d274e 0%,transparent 64%),radial-gradient(65rem 45rem at 100% 0%,#163e3a 0%,transparent 55%),#0b1020}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.55;cursor:not-allowed}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #91f2c0;outline-offset:3px}
+    .wrap{max-width:1150px;padding:35px 22px 65px;margin:auto}.topbar{display:flex;gap:20px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;margin-bottom:28px}.eyebrow{display:flex;align-items:center;gap:8px;font-size:.79rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase;color:#91e9c4}.mark{width:10px;height:10px;background:#49dba2;box-shadow:0 0 0 5px #49dba220;border-radius:50%}h1{font-size:clamp(2.2rem,5vw,4.2rem);letter-spacing:-.06em;line-height:1.04;margin:12px 0 12px}h1 span{color:#68e0a9}.intro{color:#aab8cc;max-width:670px;line-height:1.6;margin:0}.top-actions{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.btn{border:1px solid #334059;border-radius:12px;padding:11px 14px;background:#1b2941;color:#e9f1fc;font-weight:750;white-space:nowrap}.btn:hover{border-color:#6a8e9c;background:#263956}.btn.primary{background:#54d99b;color:#10261e;border-color:#54d99b}.btn.primary:hover{background:#7becb2}.btn.danger{color:#ffb9b9;border-color:#734456;background:#3a2432}.btn.tiny{padding:6px 9px;font-size:.8rem}.btn.ghost{background:transparent}.status{display:flex;gap:9px;align-items:center;padding:12px 14px;background:#141f30;border:1px solid #334059;border-radius:12px;min-height:45px;font-size:.86rem;color:#c4d0e0}.status i{height:9px;width:9px;border-radius:50%;background:#e7b35d;display:inline-block}.status.online i{background:#58dc9b}.status.offline i{background:#a8adc1}.status.error i{background:#fc7987}.sub{font-size:.85rem;color:#9eacc3}.layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:20px;align-items:start}.panel{background:#111c2eec;border:1px solid #2f3c56;border-radius:20px;box-shadow:0 18px 55px #03070f31}.sidebar{padding:18px;position:sticky;top:18px}.sidebar h2,.sectiontitle{font-size:.84rem;letter-spacing:.11em;text-transform:uppercase;font-weight:850;color:#9eacc3;margin:6px 0 15px}.nav{display:grid;gap:7px}.nav button{width:100%;display:flex;justify-content:space-between;gap:10px;align-items:center;text-align:left;background:transparent;color:#d0dcf0;border:1px solid transparent;border-radius:12px;padding:11px 12px;font-weight:700}.nav button:hover{background:#23314b}.nav button.active{background:#1b413d;border-color:#326d5a;color:#b8ffe0}.nav small{background:#243148;padding:2px 7px;border-radius:20px;font-weight:700;color:#a6b9d5}.nav button.active small{background:#275b4c;color:#d7ffee}.divider{border-top:1px solid #2c3951;margin:18px 0}.form-row{display:flex;gap:8px}.field{width:100%;background:#0e1726;color:#f4f7fc;border:1px solid #3b4965;border-radius:11px;padding:11px 12px;min-width:0}.field::placeholder{color:#788ca5}.field:focus{border-color:#63deab}.addgame .btn{min-width:43px}.main{min-width:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}.stat{padding:18px;background:#111c2eeb;border:1px solid #30405a;border-radius:16px}.stat strong{font-size:2rem;font-weight:900;letter-spacing:-.055em;display:block}.stat span{font-size:.84rem;color:#9cabbe}.highlight{color:#6ee9ab}.progressbar{height:9px;background:#26364a;border-radius:20px;margin-top:12px;overflow:hidden}.progressbar>div{height:100%;background:linear-gradient(90deg,#2ecf9f,#9deabc);border-radius:inherit;width:0%;transition:width .2s}.create{padding:21px;margin-bottom:19px}.create h2,.listhead h2{margin:0;font-size:1.16rem}.create p{margin:6px 0 15px}.create form{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(140px,1fr) auto;gap:9px}.listpanel{padding:20px}.listhead{display:flex;align-items:center;justify-content:space-between;gap:13px;flex-wrap:wrap;margin-bottom:16px}.listtools{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.listtools input{width:175px}.challenge-list{display:grid;gap:9px}.challenge{border:1px solid #314057;background:#132034;border-radius:13px;padding:12px 12px;display:flex;align-items:flex-start;gap:12px;min-width:0}.challenge.done{background:#142d2b;border-color:#326654}.toggle{width:29px;height:29px;flex:0 0 29px;border:2px solid #5a7590;border-radius:9px;display:grid;place-items:center;background:#132034;color:#103320;font-size:18px;font-weight:950;margin-top:1px}.done .toggle{background:#69e3a5;border-color:#69e3a5}.ctext{flex:1;min-width:0}.ctext .task{font-weight:760;font-size:.98rem;line-height:1.45;word-break:break-word}.done .ctext .task{text-decoration:line-through;color:#b0c1b9}.ctext .meta{margin-top:4px;color:#94a8c2;font-size:.76rem;line-height:1.5}.done .ctext .meta{color:#91b8a5}.rowactions{display:flex;gap:5px;flex-shrink:0}.iconbtn{border:1px solid #33445a;color:#a8b6ca;border-radius:8px;background:transparent;min-width:28px;min-height:28px;font-size:14px}.iconbtn:hover{color:white;background:#33445a}.empty{text-align:center;color:#a7b4c7;padding:55px 16px;border:1px dashed #3e4d68;border-radius:14px}.games-manage{margin-top:19px}.games-manage summary{cursor:pointer;font-weight:740;color:#b8cadd;padding:8px}.manageitems{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}.manageitem{display:flex;align-items:center;gap:6px;background:#202c43;border:1px solid #3d4c62;border-radius:12px;padding:7px 8px 7px 13px;font-size:.85rem}.manageitem span{margin-right:7px}.footer{margin-top:27px;color:#8296ad;font-size:.8rem;line-height:1.6}.footer a{color:#9bd9b8}.settings{margin-top:28px;padding:20px}.settings summary{font-weight:800;cursor:pointer;font-size:1.04rem}.settings p,.settings li{color:#aebcd0;font-size:.87rem;line-height:1.65}.settings a{color:#96e5bf}.setupgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:15px}.setupgrid label{display:grid;gap:5px;color:#d1dceb;font-size:.85rem;font-weight:700}.settings .help{background:#233047;border:1px solid #3b5070;border-radius:11px;padding:12px 14px;margin:13px 0}.setupactions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.dangerNote{color:#ffcfb9!important}.notice{padding:10px 12px;border-radius:12px;background:#172d3b;border:1px solid #34526c;margin:14px 0;font-size:.8rem;color:#afc8d7}.profile{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.profile input{width:150px}.toast{position:fixed;bottom:20px;right:20px;max-width:min(380px,calc(100vw - 35px));background:#26354a;border:1px solid #4d617a;box-shadow:0 12px 40px #05070d8a;border-radius:12px;padding:14px 18px;z-index:100;opacity:0;transform:translateY(10px);transition:.18s;pointer-events:none}.toast.show{opacity:1;transform:none}.toast.bad{border-color:#a85964;color:#ffd0d6}@media(max-width:810px){.layout{grid-template-columns:1fr}.sidebar{position:static}.nav{display:flex;flex-wrap:wrap}.nav button{width:auto}.create form{grid-template-columns:1fr 1fr}.create form input:first-child{grid-column:1 / -1}.create form button{grid-column:1 / -1}.wrap{padding:24px 14px 42px}.topbar{margin-bottom:20px}.listpanel{padding:14px}.stats{gap:7px}.stat{padding:12px}.stat strong{font-size:1.65rem}.rowactions{flex-direction:column}.setupgrid{grid-template-columns:1fr}}@media(max-width:420px){.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:1/-1}.listtools input{width:125px}}
+  </style>
+</head>
+<body>
+<!-- Beim Export aus dem Einstellungsbereich wird dieser Block automatisch ausgefüllt. -->
+<script type="application/json" id="firebase-config">{"apiKey":"AIzaSyA1rnvp8NADCUf4EKt9ue477f2qDyJDkvE","authDomain":"win-challenges.firebaseapp.com","projectId":"win-challenges","appId":"1:19985699691:web:33c8528195ccc0ebc0b22e"}</script>
+<div class="wrap">
+  <header class="topbar">
+    <div><div class="eyebrow"><span class="mark"></span> Gemeinsam gewinnen</div><h1>WIN <span>Challenges.</span></h1><p class="intro">Legt Challenges für eure Lieblingsspiele fest, hakt sie gemeinsam ab und verfolgt euren Fortschritt – an einem Ort.</p></div>
+    <div class="top-actions"><div class="status offline" id="connection"><i></i><span id="connectionText">Lokaler Modus</span></div><button type="button" class="btn" id="shareBtn">🔗 Raum teilen</button><button type="button" class="btn ghost" id="newRoomBtn">+ Neuer Raum</button></div>
+  </header>
+  <div id="modeNotice" class="notice">📍 <strong>Lokale Demo:</strong> Deine Änderungen bleiben in diesem Browser gespeichert, aber niemand sonst sieht sie. Richte unten Firebase ein und lade die konfigurierte HTML-Datei hoch, um gemeinsam abzuhaken.</div>
+  <div class="layout">
+    <aside class="panel sidebar">
+      <h2>Spiele</h2><nav class="nav" id="gameNav" aria-label="Spiele"><button type="button" data-action="choose" data-id="all" class="active"><span>Alle Spiele</span><small>4</small></button><button type="button" data-action="choose" data-id="mine" class=""><span>Minecraft</span><small>3</small></button><button type="button" data-action="choose" data-id="valo" class=""><span>VALORANT</span><small>1</small></button></nav>
+      <div class="divider"></div>
+      <div class="sectiontitle">Spiel hinzufügen</div>
+      <form id="gameForm" class="form-row addgame"><input class="field" id="gameName" maxlength="50" placeholder="Name des Spiels" required="" autocomplete="off" aria-label="Neues Spiel"><button class="btn primary" aria-label="Spiel hinzufügen" title="Spiel hinzufügen">+</button></form>
+      <div class="divider"></div>
+      <label class="sub" for="playerName">Dein Anzeigename (optional)</label><input class="field" id="playerName" maxlength="35" placeholder="Dein Name" style="margin-top:8px" autocomplete="off"><p class="sub" style="line-height:1.5">Wird bei abgeschlossenen Challenges angezeigt.</p>
+    </aside>
+    <main class="main">
+      <div class="stats">
+        <div class="stat"><strong class="highlight" id="statDone">0</strong><span>Geschafft</span></div>
+        <div class="stat"><strong id="statOpen">4</strong><span>Noch offen</span></div>
+        <div class="stat"><strong id="statPercent">0 %</strong><span>Fortschritt</span><div class="progressbar" aria-hidden="true"><div id="progressFill" style="width: 0%;"></div></div></div>
+      </div>
+      <section class="panel create"><h2>Neue Challenge</h2><p class="sub">Welche Aufgabe wollt ihr gemeinsam schaffen?</p><form id="challengeForm"><input class="field" id="challengeTitle" placeholder="z. B. Gemeinsam ein schwieriges Level meistern" maxlength="160" required="" autocomplete="off"><select class="field" id="gameSelect" aria-label="Spiel für Challenge" required=""><option value="">Spiel auswählen …</option><option value="mine">Minecraft</option><option value="valo">VALORANT</option></select><button type="submit" class="btn primary">+ Hinzufügen</button></form></section>
+      <section class="panel listpanel"><div class="listhead"><div><h2 id="listTitle">Alle Challenges</h2><p class="sub" id="listSubtitle" style="margin:5px 0 0">4 Challenges · 0 geschafft</p></div><div class="listtools"><input class="field" id="searchInput" placeholder="Suchen …" aria-label="Challenges suchen"><select class="field" id="filterSelect" aria-label="Statusfilter"><option value="all">Alle</option><option value="open">Offen</option><option value="done">Geschafft</option></select></div></div><div class="challenge-list" id="challengeList"><article class="challenge "><button type="button" class="toggle" data-action="toggle" data-id="local_0" aria-label="Als geschafft markieren" title="Als geschafft markieren"></button><div class="ctext"><div class="task">Baue eine vollständige Nether-Festung</div><div class="meta">Minecraft</div></div><div class="rowactions"><button type="button" class="iconbtn" data-action="editChallenge" data-id="local_0" title="Challenge bearbeiten" aria-label="Challenge bearbeiten">✎</button><button type="button" class="iconbtn" data-action="deleteChallenge" data-id="local_0" title="Challenge löschen" aria-label="Challenge löschen">✕</button></div></article><article class="challenge "><button type="button" class="toggle" data-action="toggle" data-id="local_1" aria-label="Als geschafft markieren" title="Als geschafft markieren"></button><div class="ctext"><div class="task">Sammle alle Musikplatten</div><div class="meta">Minecraft</div></div><div class="rowactions"><button type="button" class="iconbtn" data-action="editChallenge" data-id="local_1" title="Challenge bearbeiten" aria-label="Challenge bearbeiten">✎</button><button type="button" class="iconbtn" data-action="deleteChallenge" data-id="local_1" title="Challenge löschen" aria-label="Challenge löschen">✕</button></div></article><article class="challenge "><button type="button" class="toggle" data-action="toggle" data-id="local_2" aria-label="Als geschafft markieren" title="Als geschafft markieren"></button><div class="ctext"><div class="task">Finde eine antike Stadt</div><div class="meta">Minecraft</div></div><div class="rowactions"><button type="button" class="iconbtn" data-action="editChallenge" data-id="local_2" title="Challenge bearbeiten" aria-label="Challenge bearbeiten">✎</button><button type="button" class="iconbtn" data-action="deleteChallenge" data-id="local_2" title="Challenge löschen" aria-label="Challenge löschen">✕</button></div></article><article class="challenge "><button type="button" class="toggle" data-action="toggle" data-id="local_5" aria-label="Als geschafft markieren" title="Als geschafft markieren"></button><div class="ctext"><div class="task">Gewinne fünf Matches in Folge</div><div class="meta">VALORANT</div></div><div class="rowactions"><button type="button" class="iconbtn" data-action="editChallenge" data-id="local_5" title="Challenge bearbeiten" aria-label="Challenge bearbeiten">✎</button><button type="button" class="iconbtn" data-action="deleteChallenge" data-id="local_5" title="Challenge löschen" aria-label="Challenge löschen">✕</button></div></article></div>
+        <details class="games-manage"><summary>Spiele umbenennen oder löschen</summary><div id="manageGames" class="manageitems"><div class="manageitem"><span>Minecraft</span><button type="button" class="iconbtn" title="Umbenennen" aria-label="Minecraft umbenennen" data-action="renameGame" data-id="mine">✎</button><button type="button" class="iconbtn" title="Spiel und alle seine Challenges löschen" aria-label="Minecraft löschen" data-action="deleteGame" data-id="mine">✕</button></div><div class="manageitem"><span>VALORANT</span><button type="button" class="iconbtn" title="Umbenennen" aria-label="VALORANT umbenennen" data-action="renameGame" data-id="valo">✎</button><button type="button" class="iconbtn" title="Spiel und alle seine Challenges löschen" aria-label="VALORANT löschen" data-action="deleteGame" data-id="valo">✕</button></div></div></details>
+      </section>
+    </main>
+  </div>
+  <details class="panel settings" id="settingsPanel" open=""><summary>⚙️ Einrichtung der Online-Synchronisierung</summary>
+    <p>Ohne Datenbank läuft diese HTML-Datei als lokale Demo: Häkchen und Challenges werden nur in <strong>diesem Browser</strong> gespeichert. Für gemeinsames Abhaken brauchst du ein kostenloses Firebase-Projekt mit <strong>Authentication (Anonym)</strong> und <strong>Cloud Firestore</strong>. Die vier Werte findest du in den Firebase-Projekteinstellungen bei deiner Web-App.</p>
+    <div class="help">Die Datenbank muss in Firebase angelegt und die Sicherheitsregeln aus der mitgelieferten Datei <strong>firestore.rules</strong> veröffentlicht werden. Erst danach funktioniert die Synchronisierung.</div>
+    <div class="setupgrid"><label>apiKey<input class="field" id="fbApiKey" autocomplete="off" placeholder="AIza…"></label><label>authDomain<input class="field" id="fbAuthDomain" autocomplete="off" placeholder="mein-projekt.firebaseapp.com"></label><label>projectId<input class="field" id="fbProjectId" autocomplete="off" placeholder="mein-projekt"></label><label>appId<input class="field" id="fbAppId" autocomplete="off" placeholder="1:…:web:…"></label></div>
+    <div class="setupactions"><button class="btn" type="button" id="saveConfigBtn">Auf diesem Gerät speichern &amp; verbinden</button><button class="btn primary" type="button" id="downloadConfiguredBtn">Konfigurierte index.html herunterladen</button><button class="btn ghost" type="button" id="clearConfigBtn">Lokalen Zugang zurücksetzen</button></div>
+    <p>Wichtig: <strong>Nur das Herunterladen der konfigurierten Datei und ihr Hochladen auf deine Webseite</strong> sorgen dafür, dass auch andere Besucher automatisch dieselbe Firebase-Datenbank nutzen. Die erste Schaltfläche richtet Firebase nur in deinem aktuellen Browser ein.</p>
+    <p class="dangerNote">Sicherheit: Alle Personen mit dem Raumlink können Challenges lesen, bearbeiten und löschen. Bitte keine privaten Daten speichern. Der lange zufällige Raumcode schützt vor einfachem Erraten, ersetzt aber keine echte Mitgliederverwaltung.</p>
+  </details>
+  <footer class="footer">WIN Challenges · Daten werden entweder lokal im Browser oder – nach Firebase-Einrichtung – gemeinsam in Firestore gespeichert. <span id="roomLabel">Raum-ID: c9dc196d…</span></footer>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script type="module">
+// Firebase wird erst geladen, wenn die Online-Verbindung konfiguriert ist.
+// So funktioniert die lokale Demo auch ohne eine Netzwerkverbindung.
+let collection, onSnapshot, addDoc, updateDoc, deleteDoc, doc;
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const hexId = () => Array.from(crypto.getRandomValues(new Uint8Array(20)), b => b.toString(16).padStart(2,'0')).join('');
+const validRoom = id => /^[0-9a-f]{40}$/.test(id);
+const savedConfigKey = 'winChallengesFirebaseConfigV1';
+const profileKey = 'winChallengesPlayerNameV1';
+const embeddedConfig = JSON.parse($('firebase-config').textContent);
+let customConfig = null;
+try { customConfig = JSON.parse(localStorage.getItem(savedConfigKey) || 'null'); } catch {}
+let firebaseConfig = customConfig?.apiKey ? customConfig : embeddedConfig;
+const configured = () => Boolean(firebaseConfig?.apiKey && firebaseConfig?.authDomain && firebaseConfig?.projectId && firebaseConfig?.appId);
+let room = new URLSearchParams(location.search).get('room');
+if (!validRoom(room)) {
+  room = localStorage.getItem('winChallengesDefaultRoomV1');
+  if (!validRoom(room)) {room = hexId();localStorage.setItem('winChallengesDefaultRoomV1',room);}
+  const u = new URL(location.href);u.searchParams.set('room',room);history.replaceState(null,'',u);
+}
+$('roomLabel').textContent = 'Raum-ID: ' + room.slice(0,8) + '…';
+$('playerName').value = localStorage.getItem(profileKey) || '';
+$('playerName').addEventListener('input',() => localStorage.setItem(profileKey,$('playerName').value.trim().slice(0,35)));
+
+const initialExamples = () => {
+  const t=Date.now();
+  const games=[{id:'mine',name:'Minecraft',createdAt:t},{id:'pal',name:'Palworld',createdAt:t+1},{id:'valo',name:'VALORANT',createdAt:t+2}];
+  const titles=[['mine','Baue eine vollständige Nether-Festung'],['mine','Sammle alle Musikplatten'],['mine','Finde eine antike Stadt'],['pal','Fange einen legendären Pal'],['pal','Erkunde alle Gebiete'],['valo','Gewinne fünf Matches in Folge']];
+  return {games,challenges:titles.map(([gameId,title],i)=>({id:'local_'+i,gameId,title,done:i===3,completedBy:i===3?'Demo':'',createdAt:t+i}))};
+};
+const localKey = () => 'winChallengesLocalRoomV1_'+room;
+const loadLocal = () => { try { const raw=localStorage.getItem(localKey());if(raw){const x=JSON.parse(raw); if(Array.isArray(x.games)&&Array.isArray(x.challenges)) return x;} } catch{} const x=initialExamples();localStorage.setItem(localKey(),JSON.stringify(x));return x;};
+let state = {games:[],challenges:[]};
+let selectedGameId = 'all';
+let isCloud = configured();
+let db=null;
+const labelGame = id => state.games.find(g=>g.id===id)?.name || 'Gelöschtes Spiel';
+const sortedGames = () => [...state.games].sort((a,b)=>a.name.localeCompare(b.name,'de'));
+function toast(message,bad=false){const el=$('toast');el.textContent=message;el.className='toast show'+(bad?' bad':'');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.className='toast',3500);}
+function setConnection(mode,msg){$('connection').className='status '+mode;$('connectionText').textContent=msg;}
+function render(){
+  const games=sortedGames();
+  if(selectedGameId!=='all' && !state.games.some(g=>g.id===selectedGameId)) selectedGameId='all';
+  $('gameNav').innerHTML = `<button type="button" data-action="choose" data-id="all" class="${selectedGameId==='all'?'active':''}"><span>Alle Spiele</span><small>${state.challenges.length}</small></button>` + games.map(g=>`<button type="button" data-action="choose" data-id="${esc(g.id)}" class="${selectedGameId===g.id?'active':''}"><span>${esc(g.name)}</span><small>${state.challenges.filter(c=>c.gameId===g.id).length}</small></button>`).join('');
+  const oldSelect=$('gameSelect').value;
+  $('gameSelect').innerHTML=games.length?'<option value="">Spiel auswählen …</option>'+games.map(g=>`<option value="${esc(g.id)}">${esc(g.name)}</option>`).join(''):'<option value="">Erst Spiel anlegen</option>';
+  $('gameSelect').value=games.some(g=>g.id===oldSelect)?oldSelect:(selectedGameId!=='all'?selectedGameId:'');
+  $('manageGames').innerHTML=games.length?games.map(g=>`<div class="manageitem"><span>${esc(g.name)}</span><button type="button" class="iconbtn" title="Umbenennen" aria-label="${esc(g.name)} umbenennen" data-action="renameGame" data-id="${esc(g.id)}">✎</button><button type="button" class="iconbtn" title="Spiel und alle seine Challenges löschen" aria-label="${esc(g.name)} löschen" data-action="deleteGame" data-id="${esc(g.id)}">✕</button></div>`).join(''):'<span class="sub">Noch keine Spiele vorhanden.</span>';
+  const gameList=state.challenges.filter(c=>selectedGameId==='all'||c.gameId===selectedGameId);
+  const done=gameList.filter(c=>c.done).length;
+  $('statDone').textContent=done;$('statOpen').textContent=gameList.length-done;
+  const percent=gameList.length?Math.round(done/gameList.length*100):0;
+  $('statPercent').textContent=percent+' %';$('progressFill').style.width=percent+'%';
+  $('listTitle').textContent=selectedGameId==='all'?'Alle Challenges':labelGame(selectedGameId);
+  $('listSubtitle').textContent=gameList.length+' Challenges · '+done+' geschafft';
+  const search=$('searchInput').value.trim().toLocaleLowerCase('de');
+  const filter=$('filterSelect').value;
+  const shown=gameList.filter(c=>(filter==='all'||(filter==='done' ? c.done : !c.done))&&(!search||(c.title||'').toLocaleLowerCase('de').includes(search)||labelGame(c.gameId).toLocaleLowerCase('de').includes(search))).sort((a,b)=>Number(a.done)-Number(b.done)||Number(a.createdAt||0)-Number(b.createdAt||0));
+  $('challengeList').innerHTML=shown.length?shown.map(c=>`<article class="challenge ${c.done?'done':''}"><button type="button" class="toggle" data-action="toggle" data-id="${esc(c.id)}" aria-label="${c.done?'Als offen markieren':'Als geschafft markieren'}" title="${c.done?'Wieder öffnen':'Als geschafft markieren'}">${c.done?'✓':''}</button><div class="ctext"><div class="task">${esc(c.title)}</div><div class="meta">${esc(labelGame(c.gameId))}${c.done?' · Geschafft'+(c.completedBy?' von '+esc(c.completedBy):''):''}</div></div><div class="rowactions"><button type="button" class="iconbtn" data-action="editChallenge" data-id="${esc(c.id)}" title="Challenge bearbeiten" aria-label="Challenge bearbeiten">✎</button><button type="button" class="iconbtn" data-action="deleteChallenge" data-id="${esc(c.id)}" title="Challenge löschen" aria-label="Challenge löschen">✕</button></div></article>`).join(''):`<div class="empty">${state.games.length?'Hier sind noch keine passenden Challenges.':'Füge links zuerst ein Spiel hinzu.'}</div>`;
+}
+const saveLocal = () => {localStorage.setItem(localKey(),JSON.stringify(state));render();};
+async function createRecord(kind,data){if(isCloud){await addDoc(collection(db,'rooms',room,kind),data);}else{state[kind].push({id:hexId(),...data});saveLocal();}}
+async function updateRecord(kind,id,data){if(isCloud){await updateDoc(doc(db,'rooms',room,kind,id),data);}else{const target=state[kind].find(x=>x.id===id);if(target)Object.assign(target,data);saveLocal();}}
+async function deleteRecord(kind,id){if(isCloud){await deleteDoc(doc(db,'rooms',room,kind,id));}else{state[kind]=state[kind].filter(x=>x.id!==id);saveLocal();}}
+function humanError(err){console.error(err);const code=String(err?.code||''); if(code.includes('permission-denied'))return 'Keine Berechtigung. Prüfe die Firestore-Sicherheitsregeln in Firebase.';if(code.includes('auth/operation-not-allowed'))return 'Anonyme Anmeldung ist in Firebase noch nicht aktiviert.';if(code.includes('auth/unauthorized-domain'))return 'Diese Webseiten-Domain muss in Firebase Authentication autorisiert werden.';return 'Fehler: '+(err?.message||'Unbekannter Fehler');}
+async function runTask(fn){try{await fn();}catch(err){toast(humanError(err),true);}}
+$('gameForm').addEventListener('submit',e=>{e.preventDefault();const name=$('gameName').value.trim();if(!name)return;if(state.games.some(g=>g.name.toLocaleLowerCase('de')===name.toLocaleLowerCase('de'))){toast('Dieses Spiel gibt es bereits.',true);return;}runTask(async()=>{await createRecord('games',{name,createdAt:Date.now()});$('gameName').value='';toast('Spiel hinzugefügt.');});});
+$('challengeForm').addEventListener('submit',e=>{e.preventDefault();const title=$('challengeTitle').value.trim();const gameId=$('gameSelect').value;if(!title||!state.games.some(g=>g.id===gameId)){toast('Bitte wähle ein Spiel aus.',true);return;}runTask(async()=>{await createRecord('challenges',{title,gameId,done:false,completedBy:'',createdAt:Date.now()});$('challengeTitle').value='';toast('Challenge hinzugefügt.');});});
+$('searchInput').addEventListener('input',render);$('filterSelect').addEventListener('change',render);
+document.addEventListener('click',e=>{const button=e.target.closest('[data-action]');if(!button)return;const action=button.dataset.action,id=button.dataset.id;
+ if(action==='choose'){selectedGameId=id;render();return;}
+ if(action==='toggle'){const c=state.challenges.find(x=>x.id===id);if(!c)return;const next=!c.done;runTask(()=>updateRecord('challenges',id,{done:next,completedBy:next?($('playerName').value.trim()||'Gast'):'',updatedAt:Date.now()}));}
+ if(action==='deleteChallenge'){const c=state.challenges.find(x=>x.id===id);if(c&&confirm('Challenge „'+c.title+'“ wirklich löschen?'))runTask(()=>deleteRecord('challenges',id));}
+ if(action==='editChallenge'){const c=state.challenges.find(x=>x.id===id);if(!c)return;const title=prompt('Challenge bearbeiten:',c.title);if(title===null)return;if(!title.trim()||title.trim().length>160){toast('Bitte einen Text mit maximal 160 Zeichen eingeben.',true);return;}runTask(()=>updateRecord('challenges',id,{title:title.trim()}));}
+ if(action==='renameGame'){const g=state.games.find(x=>x.id===id);if(!g)return;const name=prompt('Spiel umbenennen:',g.name);if(name===null)return;if(!name.trim()||name.trim().length>50){toast('Der Name muss zwischen 1 und 50 Zeichen haben.',true);return;}runTask(()=>updateRecord('games',id,{name:name.trim()}));}
+ if(action==='deleteGame'){const g=state.games.find(x=>x.id===id);if(!g)return;const related=state.challenges.filter(c=>c.gameId===id);if(!confirm('„'+g.name+'“ und alle '+related.length+' zugehörigen Challenges unwiderruflich löschen?'))return;runTask(async()=>{await Promise.all(related.map(c=>deleteRecord('challenges',c.id)));await deleteRecord('games',id);toast('Spiel gelöscht.');});}
+});
+$('shareBtn').addEventListener('click',async()=>{if(!isCloud){toast('Die lokale Demo kann nicht gemeinsam synchronisiert werden. Richte zuerst Firebase ein.',true);$('settingsPanel').open=true;$('settingsPanel').scrollIntoView({behavior:'smooth'});return;}const url=new URL(location.href);url.searchParams.set('room',room);try{await navigator.clipboard.writeText(url.toString());toast('Raumlink kopiert. Teile ihn mit deinen Freunden!');}catch{prompt('Kopiere diesen Raumlink:',url.toString());}});
+$('newRoomBtn').addEventListener('click',()=>{if(!confirm('Neuen Raum öffnen? Der aktuelle Raum bleibt bestehen. Hebe seinen Link auf, wenn du später zurück möchtest.'))return;const next=hexId();localStorage.setItem('winChallengesDefaultRoomV1',next);const u=new URL(location.href);u.searchParams.set('room',next);location.assign(u.toString());});
+
+const configFields={apiKey:'fbApiKey',authDomain:'fbAuthDomain',projectId:'fbProjectId',appId:'fbAppId'};
+Object.entries(configFields).forEach(([key,id])=>$(id).value=firebaseConfig?.[key]||'');
+function readInputConfig(){const c={};for(const [k,id] of Object.entries(configFields))c[k]=$(id).value.trim();return c;}
+function isComplete(c){return Object.values(c).every(Boolean);}
+$('saveConfigBtn').addEventListener('click',()=>{const c=readInputConfig();if(!isComplete(c)){toast('Bitte alle vier Firebase-Felder ausfüllen.',true);return;}localStorage.setItem(savedConfigKey,JSON.stringify(c));toast('Firebase-Konfiguration gespeichert. Seite wird neu geladen.');setTimeout(()=>location.reload(),500);});
+$('clearConfigBtn').addEventListener('click',()=>{if(!confirm('Firebase-Konfiguration aus diesem Browser entfernen? Die Online-Daten bleiben erhalten.'))return;localStorage.removeItem(savedConfigKey);location.reload();});
+$('downloadConfiguredBtn').addEventListener('click',()=>{const c=readInputConfig();if(!isComplete(c)){toast('Bitte zuerst die vier Firebase-Felder ausfüllen.',true);return;}const safeJSON=JSON.stringify(c).replace(/</g,'\\u003c');const html='<!DOCTYPE html>\n'+document.documentElement.outerHTML.replace(/(<script type="application\/json" id="firebase-config">)[\s\S]*?(<\/script>)/,(_all,start,end)=>start+safeJSON+end);const url=URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='index.html';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);toast('Konfigurierte index.html erstellt. Diese Datei hochladen.');});
+
+render();
+if(!isCloud){state=loadLocal();setConnection('offline','Lokaler Modus');$('modeNotice').innerHTML='📍 <strong>Lokale Demo:</strong> Deine Änderungen bleiben in diesem Browser gespeichert, aber niemand sonst sieht sie. Richte unten Firebase ein und lade die konfigurierte HTML-Datei hoch, um gemeinsam abzuhaken.';render();}
+else {
+  setConnection('','Verbinde …');$('modeNotice').innerHTML='☁️ <strong>Online-Modus:</strong> Die Daten liegen in Firebase. Jede Person mit demselben Raumlink sieht Änderungen live.';
+  try {
+    const [appSdk, authSdk, fireSdk] = await Promise.all([
+      import('https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js'),
+      import('https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js'),
+      import('https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js')
+    ]);
+    ({collection,onSnapshot,addDoc,updateDoc,deleteDoc,doc} = fireSdk);
+    const app=appSdk.initializeApp(firebaseConfig);db=fireSdk.getFirestore(app);const auth=authSdk.getAuth(app);
+    await authSdk.signInAnonymously(auth);
+    let loadedGames=false,loadedChallenges=false;
+    const ready=()=>{if(loadedGames&&loadedChallenges){setConnection('online','Live synchronisiert');render();}};
+    onSnapshot(collection(db,'rooms',room,'games'),snap=>{state.games=snap.docs.map(d=>({id:d.id,...d.data()}));loadedGames=true;ready();render();},err=>{setConnection('error','Verbindungsfehler');toast(humanError(err),true);});
+    onSnapshot(collection(db,'rooms',room,'challenges'),snap=>{state.challenges=snap.docs.map(d=>({id:d.id,...d.data()}));loadedChallenges=true;ready();render();},err=>{setConnection('error','Verbindungsfehler');toast(humanError(err),true);});
+  }catch(err){setConnection('error','Einrichtung prüfen');toast(humanError(err),true);$('modeNotice').textContent='Online-Verbindung fehlgeschlagen. Prüfe Firebase-Konfiguration, Anonyme Anmeldung und Firestore-Regeln. Deine Online-Daten wurden nicht verändert.';}
+}
+</script>
+
+
+</body></html>
